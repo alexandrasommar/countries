@@ -5,16 +5,23 @@ import {
     Link
 } from 'react-router-dom';
 import About from './About';
+import Random from './Random';
+import Continent from './Continent';
+import Home from './Home';
 
-const Header = () => (
+const Header = (props) => (
     <Router>
-        <div>
-            <Link to="/about">About</Link>
-            <Link to="/">Home</Link>
+        <div className="navigation">
+            <p><Link to="/">Home</Link> |</p>
+            <p><Link to="/about">About</Link> |</p>
+            <p><Link to="/random">Random</Link> |</p>
+            <p><Link to="/continent">Continents</Link></p>
 
-
+            <Route path="/home" component={Home} />
             <Route path="/about" component={About} />
-            <Route path="/"  />
+            <Route path="/random" component={Random} />
+            <Route path="/continent" render={() => <Continent showInfo={props.showInfo} countries={props.countries} />}/>
+
         </div>
 
     </Router>

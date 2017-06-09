@@ -10,19 +10,11 @@
 
 
 body {
-    /*background-image: url('/img/lenabell.jpg');
-    background-size: cover;
-    width: 70%;
-    height: auto;
-    background-repeat: no-repeat;
-    background-position: center;*/
     font-family: 'Oswald', sans-serif;
-    font-weight: 100;
-    /*color: #fafafa;*/
+    font-weight: 200;
     margin: 0;
-    background: linear-gradient(135deg,  #a7e2cc 0%,#78d3c5 29%,#ff5c5c 100%);
-
-
+    background: linear-gradient(135deg, #a7e2cc 0%, #78d3c5 29%, #ff5c5c 100%);
+    padding: 5%;
 }
 
 h1, h2, h3 {
@@ -61,12 +53,64 @@ button:hover {
 button:focus {
     outline: 5px solid var(--yellow);
 }
+i {
+    text-align: center;
+}
+
+.fa-globe {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0%   {
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+.home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15%;
+}
+
+.navigation {
+    /*align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;*/
+
+    /*padding: 100px 0;*/
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.navigation a {
+
+        color: white;
+    text-align: center;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 10px;
+
+    box-sizing: border-box;
+}
+
+.navigation a:hover {
+    background-color: var(--purple);
+}
+
 
 .continent {
     width: 90%;
     margin: 0 auto;
     display: flex;
-    /*flex-wrap: wrap;*/
     justify-content: center;
     flex-direction: column;
 }

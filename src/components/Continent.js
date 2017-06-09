@@ -9,6 +9,7 @@ function Continent (props) {
             <Button click={props.showInfo}>Africa</Button>
             <Button click={props.showInfo}>Europe</Button>
             <Button click={props.showInfo}>Oceania</Button>
+            {props.countries}
         </div>
     )
 }

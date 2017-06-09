@@ -6,11 +6,10 @@ import {
     Link
 } from 'react-router-dom';
 
-const PropTypes = require('prop-types');
 import Continent from './components/Continent';
-
 import Button from './components/Button';
 import Header from './components/Header';
+import Home from './components/Home';
 require('./index.css');
 
 // state
@@ -36,7 +35,7 @@ class App extends React.Component {
             this.setState({ continent: data })
         });
 
-    } //TO DO: se till att knappen döljs när den har klickats!
+    } 
 
     render() {
 
@@ -63,11 +62,8 @@ class App extends React.Component {
         return (
 
             <div className="App">
-                <i className="fa fa-globe" aria-hidden="true"></i>
-                <h1>The World</h1>
-                <Header />
-                <Continent showInfo={this.showInfo.bind(this)} />
-                {countries}
+                <Header showInfo={this.showInfo.bind(this)} countries={countries} />
+                <Home />
             </div>
         )
     }
