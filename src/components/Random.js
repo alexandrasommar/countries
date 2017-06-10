@@ -8,10 +8,6 @@ class Random extends React.Component {
         }
     }
 
-    getRandomNumber (min, max) {
-        return Math.floor(Math.random() * (max - min)) + min;
-    }
-
     componentDidMount () {
         fetch('https://restcountries.eu/rest/v2/name/united')
         .then(response => response.json())
@@ -23,7 +19,7 @@ class Random extends React.Component {
 
         let facts = this.state.random.map(( item, index) => {
             return <ul key={index}>
-                        <li>{item.name} has a poinpulation of {item.population}</li>
+                        <li>{item.name} has a population of {item.population}</li>
                         <li>Their nativename is {item.nativeName}</li>
                         <li>And their top level domain is {item.topLevelDomain.map( (level, index) =>{
                             return <span key={index}>{level}</span>
@@ -33,7 +29,7 @@ class Random extends React.Component {
         })
 
         return (
-            <div>
+            <div className="random">
                 <h2>Did you know?</h2>
                 {facts}
             </div>

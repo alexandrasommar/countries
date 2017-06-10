@@ -35,7 +35,7 @@ class App extends React.Component {
             this.setState({ continent: data })
         });
 
-    } 
+    }
 
     render() {
 
@@ -49,7 +49,7 @@ class App extends React.Component {
                             <h3>Language</h3> {country.languages.map((language, index) => {
                                 return <p key={index}>{language.name}</p>
                             })}
-                            <i className="fa fa-money fa-4x" aria-hidden="true"></i><h3>Currency</h3> {country.currencies.map((currency, index) => {
+                            <h3>Currency</h3> {country.currencies.map((currency, index) => {
                                 return <p key={index}>{currency.name}</p>
                             })}
                         </div>

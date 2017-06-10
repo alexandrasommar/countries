@@ -1,19 +1,27 @@
+/*****************************
+		BASE
+*****************************/
+
 :root {
     --yellow: #FFBC0A;
-    --orange: #EC7D10;
-    --red: #FC2F00;
-    --raspberry: #EC0868;
-    --purple: #C200FB;
-    font-size: 1.2rem;
 
+
+    --raspberry: #EC0868;
+
+
+    --pistage: #a7e2cc;
+    --darkpistage: #78d3c5;
+    --peachred: #ff5c5c;
+    --white: #fafafa;
+    font-size: 1.2rem;
 }
 
 
 body {
+    background: linear-gradient(135deg, var(--pistage) 0%, var(--darkpistage) 29%, var(--peachred) 100%);
     font-family: 'Oswald', sans-serif;
     font-weight: 200;
     margin: 0;
-    background: linear-gradient(135deg, #a7e2cc 0%, #78d3c5 29%, #ff5c5c 100%);
     padding: 5%;
 }
 
@@ -29,21 +37,19 @@ h1 {
 
 
 img {
-    border: 2px solid white;
-    box-sizing: border-box;
-    max-width: 100px;
+    max-width: 200px;
 }
 
 button {
     background-color: var(--raspberry);
     border: 1px solid var(--raspberry);
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-weight: 100;
     color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 100;
     margin: 10px;
     padding: 15px 40px;
-    font-size: 1.2rem;
+    text-transform: uppercase;
 }
 
 button:hover {
@@ -53,6 +59,13 @@ button:hover {
 button:focus {
     outline: 5px solid var(--yellow);
 }
+
+
+/*****************************
+		START PAGE
+*****************************/
+
+
 i {
     text-align: center;
 }
@@ -71,57 +84,85 @@ i {
 }
 .home {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    padding: 15%;
+    height: 100vh;
+    justify-content: center;
 }
 
+/*****************************
+		NAVIGATION
+*****************************/
+
 .navigation {
-    /*align-items: center;
     display: flex;
-    flex-direction: column;
-    justify-content: center;*/
-
-    /*padding: 100px 0;*/
-
-    display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
 }
 
 .navigation a {
-
-        color: white;
+    box-sizing: border-box;
+    color: var(--white);
+    font-size: 1.4rem;
+    margin: 10px;
+    padding: 5px;
     text-align: center;
-
     text-decoration: none;
     text-transform: uppercase;
-    margin: 10px;
-
-    box-sizing: border-box;
 }
 
 .navigation a:hover {
-    background-color: var(--purple);
+    background-color: var(--raspberry);
 }
 
+.navigation a:focus {
+    background-color: var(--raspberry);
+}
+
+/*****************************
+		CONTINENT
+*****************************/
 
 .continent {
-    width: 90%;
-    margin: 0 auto;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 90%;
 }
 
 
 .country {
-    /*background: rgba(186, 186, 186, 0.29);*/
-    border: 1px solid white;
+    align-items: center;
+    border-bottom: 1px solid black;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin: 0 auto;
     width: 90%;
+}
+
+/*****************************
+		RANDOM
+*****************************/
+.random {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+.random h2 {
+    text-align: center;
+}
+
+.random ul {
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;*/
+
+    list-style-type: circle;
+    padding: 0;
+
+    /*padding: 0 50px;*/
+    /*padding: 50px;*/
 }
