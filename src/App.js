@@ -12,6 +12,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
 import Random from './components/Random';
+import Scroll from './components/ScrollToTop';
 
 require('./index.css');
 
@@ -74,7 +75,6 @@ class App extends React.Component {
                     </div>
         });
         return (
-
             <Router>
                 <div className='App'>
                     <Header />
@@ -82,6 +82,7 @@ class App extends React.Component {
                     <Route path='/about' component={About} />
                     <Route path='/random' render={() => <Random randomData={this.state.random} random={this.random()} />} />
                     <Route path='/continent' render={() => <Continent showInfo={this.showInfo.bind(this)} countries={countries} />} />
+                    <Scroll />
                 </div>
             </Router>
         )

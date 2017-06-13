@@ -135,12 +135,22 @@ i {
 
 
 .country {
-    align-items: center;
     border-bottom: 1px solid black;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     margin: 0 auto;
-    width: 90%;
+    padding: 5%;
+    transition: all 2s ease;
+    width: 85%;
+}
+
+@media (min-width: 740px) {
+    .country {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 90%;
+    }
 }
 /*****************************
 		ABOUT
