@@ -1,40 +1,26 @@
 const React = require('react');
+import Home from './Home';
 
-class Random extends React.Component {
-    constructor () {
-        super();
-        this.state = {
-            random: []
-        }
-    }
+function Random (props) {
+    let facts = props.randomData.map(( item, index) => {
+        return <ul key={index}>
+                    <li>{item.name} has a population of {item.population}</li>
+                    <li>Their nativename is {item.nativeName}</li>
+                    <li>And their top level domain is {item.topLevelDomain.map( (level, index) =>{
+                        return <span key={index}>{level}</span>
+                        })}?
+                    </li>
+                </ul>
+    })
 
-    componentDidMount () {
-        fetch('https://restcountries.eu/rest/v2/name/united')
-        .then(response => response.json())
-        .then(data => {
-            this.setState({ random: data })
-        });
-    }
-    render () {
-
-        let facts = this.state.random.map(( item, index) => {
-            return <ul key={index}>
-                        <li>{item.name} has a population of {item.population}</li>
-                        <li>Their nativename is {item.nativeName}</li>
-                        <li>And their top level domain is {item.topLevelDomain.map( (level, index) =>{
-                            return <span key={index}>{level}</span>
-                            })}?
-                        </li>
-                    </ul>
-        })
-
-        return (
-            <div className="random">
-                <h2>Did you know?</h2>
-                {facts}
-            </div>
-        )
-    }
+    return (
+        <div className="random">
+            <h2>Did you know?</h2>
+            {facts}
+            <Home />
+        </div>
+    )
 }
+
 
 export default Random;

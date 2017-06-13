@@ -3,13 +3,16 @@ const ReactDOM = require('react-dom');
 import {
     BrowserRouter as Router,
     Route,
-    Link
+    NavLink
 } from 'react-router-dom';
 
 import Continent from './components/Continent';
 import Button from './components/Button';
 import Header from './components/Header';
 import Home from './components/Home';
+import About from './components/About';
+import Random from './components/Random';
+
 require('./index.css');
 
 // state
@@ -20,10 +23,18 @@ class App extends React.Component {
     constructor() {
         super();
         this.state = {
-            continent: []
+            continent: [],
+            random: []
         }
     }
 
+    random () {
+        fetch('https://restcountries.eu/rest/v2/name/united')
+        .then(response => response.json())
+        .then(data => {
+            this.setState({ random: data })
+        });
+    }
 
     showInfo (event) {
         let country = event.target.value.toLowerCase();
@@ -34,13 +45,16 @@ class App extends React.Component {
         .then(data => {
             this.setState({ continent: data })
         });
+    }
 
+    scroll(event) {
+        console.log(event)
     }
 
     render() {
 
         let countries = this.state.continent.map((country, index) => {
-            return <div key={index} className="country">
+            return <div key={index} className='country'>
                         <div>
                             <h2>{country.name}</h2>
                             <p>Native name: {country.nativeName}</p>
@@ -61,10 +75,15 @@ class App extends React.Component {
         });
         return (
 
-            <div className="App">
-                <Header showInfo={this.showInfo.bind(this)} countries={countries} />
-                <Home />
-            </div>
+            <Router>
+                <div className='App'>
+                    <Header />
+                    <Route exact path='/' component={Home} />
+                    <Route path='/about' component={About} />
+                    <Route path='/random' render={() => <Random randomData={this.state.random} random={this.random()} />} />
+                    <Route path='/continent' render={() => <Continent showInfo={this.showInfo.bind(this)} countries={countries} />} />
+                </div>
+            </Router>
         )
     }
 }

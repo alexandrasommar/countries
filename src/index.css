@@ -4,18 +4,13 @@
 
 :root {
     --yellow: #FFBC0A;
-
-
     --raspberry: #EC0868;
-
-
     --pistage: #a7e2cc;
     --darkpistage: #78d3c5;
     --peachred: #ff5c5c;
     --white: #fafafa;
     font-size: 1.2rem;
 }
-
 
 body {
     background: linear-gradient(135deg, var(--pistage) 0%, var(--darkpistage) 29%, var(--peachred) 100%);
@@ -34,7 +29,6 @@ h1, h2, h3 {
 h1 {
     text-align: center;
 }
-
 
 img {
     max-width: 200px;
@@ -60,11 +54,15 @@ button:focus {
     outline: 5px solid var(--yellow);
 }
 
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 /*****************************
 		START PAGE
 *****************************/
-
 
 i {
     text-align: center;
@@ -96,8 +94,8 @@ i {
 .navigation {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    width: 100%;
+    justify-content: space-between;
+    width: 80%;
 }
 
 .navigation a {
@@ -116,6 +114,10 @@ i {
 }
 
 .navigation a:focus {
+    background-color: var(--raspberry);
+}
+
+.active {
     background-color: var(--raspberry);
 }
 
@@ -140,29 +142,44 @@ i {
     margin: 0 auto;
     width: 90%;
 }
+/*****************************
+		ABOUT
+*****************************/
+
+.about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 7% 10%;
+}
+
+@media (min-width: 740px) {
+    .about {
+        width: 55%;
+    }
+}
 
 /*****************************
 		RANDOM
 *****************************/
 .random {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 90%;
-    margin: 0 auto;
+    padding: 5% 10%;
 }
 .random h2 {
     text-align: center;
 }
 
 .random ul {
-    /*display: flex;
-    flex-direction: column;
-    justify-content: center;*/
-
     list-style-type: circle;
     padding: 0;
+}
 
-    /*padding: 0 50px;*/
-    /*padding: 50px;*/
+/*****************************
+		TO TOP
+*****************************/
+
+.to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
 }

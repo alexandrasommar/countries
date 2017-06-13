@@ -1,5 +1,6 @@
 const React = require('react');
 import Button from './Button';
+import Home from './Home';
 
 function Continent (props) {
     return (
@@ -10,6 +11,7 @@ function Continent (props) {
             <Button click={props.showInfo}>Europe</Button>
             <Button click={props.showInfo}>Oceania</Button>
             {props.countries}
+            <Home />
         </div>
     )
 }
