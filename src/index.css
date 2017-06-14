@@ -95,6 +95,7 @@ i {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 0 0 7% 0;
     width: 80%;
 }
 
