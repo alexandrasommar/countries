@@ -14,7 +14,7 @@ function Random (props) {
     })
 
     return (
-        <div className="random">
+        <div className='random'>
             <h2>Did you know?</h2>
             {facts}
             <Home />

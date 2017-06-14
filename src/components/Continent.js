@@ -21,12 +21,12 @@ function Continent (props) {
                         })}
                     </div>
                     <div>
-                        <img src={country.flag} />
+                        <img src={country.flag} alt={country.name} />
                     </div>
                 </div>
     });//Lägga in som en länk här? Så en skickas till Asia??
     return (
-        <div className="continent">
+        <div className='continent'>
             <Button click={props.showInfo}>Asia</Button>
             <Button click={props.showInfo}>America</Button>
             <Button click={props.showInfo}>Africa</Button>

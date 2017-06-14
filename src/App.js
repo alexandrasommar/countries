@@ -3,7 +3,8 @@ const ReactDOM = require('react-dom');
 import {
     BrowserRouter as Router,
     Route,
-    NavLink
+    NavLink,
+    Switch
 } from 'react-router-dom';
 
 import Continent from './components/Continent';
@@ -33,7 +34,7 @@ class App extends React.Component {
     componentDidMount() {
         this.setState({loading: false});
     }
-    
+
     random () {
         fetch('https://restcountries.eu/rest/v2/name/united')
         .then(response => response.json())
@@ -69,10 +70,15 @@ class App extends React.Component {
             <Router>
                 <div className='App'>
                     <Header />
-                    <Route exact path='/' component={Home} />
-                    <Route path='/about' component={About} />
-                    <Route path='/random' render={() => <Random randomData={this.state.random} random={this.random()} />} />
-                    <Route path='/continent' render={() => <Continent showInfo={this.showInfo.bind(this)} countries={this.state.continent} />} />
+                    <Switch>
+                        <Route exact path='/' component={Home} />
+                        <Route path='/about' component={About} />
+                        <Route path='/random' render={() => <Random randomData={this.state.random} random={this.random()} />} />
+                        <Route path='/continent' render={() => <Continent showInfo={this.showInfo.bind(this)} countries={this.state.continent} />} />
+                        <Route render={() => {
+                            return <div className='App'>Not Found</div>
+                        }} />
+                    </Switch>
                     <Scroll />
                 </div>
             </Router>
