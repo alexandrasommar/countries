@@ -1,0 +1,13 @@
+/*****************************
+		TO TOP
+*****************************/
+
+.to-top {
+    bottom: 30px;
+    position: fixed;
+    right: 30px;
+}
+
+.to-top:hover {
+    cursor: pointer;
+}

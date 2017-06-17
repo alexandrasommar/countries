@@ -1,0 +1,14 @@
+/*****************************
+		RANDOM
+*****************************/
+.random {
+    padding: 5% 10%;
+}
+.random h2 {
+    text-align: center;
+}
+
+.random ul {
+    list-style-type: circle;
+    padding: 0;
+}

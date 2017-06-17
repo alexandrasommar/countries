@@ -1,4 +1,5 @@
 const React = require('react');
+require('./button.css');
 
 export default function Button (props) {
     return (

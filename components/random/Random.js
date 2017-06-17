@@ -1,5 +1,6 @@
 const React = require('react');
-import Home from './Home';
+import Home from '../home/Home';
+require('./random.css');
 
 function Random (props) {
     let facts = props.randomData.map(( item, index) => {

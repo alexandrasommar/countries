@@ -1,0 +1,16 @@
+/*****************************
+		ABOUT
+*****************************/
+
+.about {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 7% 10%;
+}
+
+@media (min-width: 740px) {
+    .about {
+        width: 55%;
+    }
+}

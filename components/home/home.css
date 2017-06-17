@@ -1,0 +1,26 @@
+/*****************************
+		START PAGE
+*****************************/
+
+i {
+    text-align: center;
+}
+
+.fa-globe {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0%   {
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+}

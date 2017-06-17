@@ -1,0 +1,19 @@
+button {
+    background-color: var(--raspberry);
+    border: 1px solid var(--raspberry);
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 100;
+    margin: 10px;
+    padding: 15px 40px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: var(--yellow);
+}
+
+button:focus {
+    outline: 5px solid var(--yellow);
+}

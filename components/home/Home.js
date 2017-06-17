@@ -1,4 +1,5 @@
 const React = require('react');
+require('./home.css');
 
 export default function Home () {
     return (

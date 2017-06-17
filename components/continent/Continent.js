@@ -2,8 +2,9 @@ const React = require('react');
 import {
     NavLink
 } from 'react-router-dom';
-import Button from './Button';
-import Home from './Home';
+import Button from '../button/Button';
+import Home from '../home/Home';
+require('./continent.css');
 
 function Continent (props) {
     let countries = props.countries.map((country, index) => {

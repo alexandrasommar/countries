@@ -7,13 +7,13 @@ import {
     Switch
 } from 'react-router-dom';
 
-import Continent from './components/Continent';
-import Button from './components/Button';
-import Header from './components/Header';
-import Home from './components/Home';
-import About from './components/About';
-import Random from './components/Random';
-import Scroll from './components/ScrollToTop';
+import Continent from '../components/continent/Continent';
+import Button from '../components/button/Button';
+import Header from '../components/header/Header';
+import Home from '../components/home/Home';
+import About from '../components/about/About';
+import Random from '../components/random/Random';
+import Scroll from '../components/toTop/ScrollToTop';
 
 require('./index.css');
 
@@ -52,10 +52,6 @@ class App extends React.Component {
         .then(data => {
             this.setState({ continent: data })
         });
-    }
-
-    scroll(event) {
-        // console.log(event)
     }
 
     render() {

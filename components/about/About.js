@@ -1,5 +1,6 @@
 const React = require('react');
-import Home from './Home';
+import Home from '../home/Home';
+require('./about.css');
 
 export default function About () {
     return (
