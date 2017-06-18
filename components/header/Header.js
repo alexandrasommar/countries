@@ -5,8 +5,6 @@ import {
 
 require('./header.css');
 
-
-
 const Header = () => (
         <div className="navigation">
             <NavLink exact to="/">Home</NavLink>

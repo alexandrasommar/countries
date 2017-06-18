@@ -3,6 +3,11 @@ import Home from '../home/Home';
 require('./random.css');
 
 function Random (props) {
+
+    /**
+    * Map over the united state sent via props and display corresponding facts.
+    */
+
     let facts = props.randomData.map(( item, index) => {
         return <ul key={index}>
                     <li>{item.name} has a population of {item.population}</li>
@@ -12,7 +17,7 @@ function Random (props) {
                         })}?
                     </li>
                 </ul>
-    })
+    });
 
     return (
         <div className='random'>

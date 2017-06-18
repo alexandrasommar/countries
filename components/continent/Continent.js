@@ -7,6 +7,11 @@ import Home from '../home/Home';
 require('./continent.css');
 
 function Continent (props) {
+
+    /**
+    * Map over the continent state sent via props and display info.
+    */
+
     let countries = props.countries.map((country, index) => {
         return <div key={index} className='country'>
                     <div>
@@ -25,7 +30,8 @@ function Continent (props) {
                         <img src={country.flag} alt={country.name} />
                     </div>
                 </div>
-    });//Lägga in som en länk här? Så en skickas till Asia??
+    });
+    
     return (
         <div className='continent'>
             <Button click={props.showInfo}>Asia</Button>

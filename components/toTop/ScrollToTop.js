@@ -6,6 +6,11 @@ function toTop () {
     document.documentElement.scrollTop = 0;
 }
 
+/**
+* When the user scrolls 20px down, display scroll to top icon.
+* When clicked, send the user to the top.
+*/
+
 export default function Scroll () {
 
     window.onscroll = () => {

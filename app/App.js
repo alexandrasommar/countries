@@ -17,16 +17,13 @@ import Scroll from '../components/toTop/ScrollToTop';
 
 require('./index.css');
 
-// state
-// life cycle event
-// UI
-
 class App extends React.Component {
+
     constructor() {
         super();
         this.state = {
             continent: [],
-            random: [],
+            united: [],
             loading: true
         }
     }
@@ -35,13 +32,21 @@ class App extends React.Component {
         this.setState({loading: false});
     }
 
-    random () {
+    /**
+    * Fetch data and set state based on the query 'united'.
+    */
+
+    united () {
         fetch('https://restcountries.eu/rest/v2/name/united')
         .then(response => response.json())
         .then(data => {
-            this.setState({ random: data })
+            this.setState({ united: data })
         });
     }
+
+    /**
+    * Show continent info based on which button the user clicked on.
+    */
 
     showInfo (event) {
         let country = event.target.value.toLowerCase();
@@ -55,6 +60,10 @@ class App extends React.Component {
     }
 
     render() {
+
+        /**
+        * Show loading icon while page loads/fetch is made.
+        */
         const loading = this.state.loading;
         if(loading) {
             return <div className='App'>
@@ -69,7 +78,7 @@ class App extends React.Component {
                     <Switch>
                         <Route exact path='/' component={Home} />
                         <Route path='/about' component={About} />
-                        <Route path='/random' render={() => <Random randomData={this.state.random} random={this.random()} />} />
+                        <Route path='/random' render={() => <Random randomData={this.state.united} random={this.united()} />} />
                         <Route path='/continent' render={() => <Continent showInfo={this.showInfo.bind(this)} countries={this.state.continent} />} />
                         <Route render={() => {
                             return <div className='App'>Not Found</div>
