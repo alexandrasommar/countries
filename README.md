@@ -1,6 +1,7 @@
+<img src="the-world.png">
+
 # The World
 
-<img src="the-world.png">
 Small project made for school using the <a href="https://restcountries.eu/">Rest Countries-API</a>.
 Built with React. Environment set up with the help of <a href="https://reacttraining.com">React Fundamentals</a>
 
@@ -10,8 +11,8 @@ Built with React. Environment set up with the help of <a href="https://reacttrai
 To run the World locally:
 
 ```
-$npm install
-$npm run start
+$ npm install
+$ npm run start
 ```
 
 ### Build and deploy
